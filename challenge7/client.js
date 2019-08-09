@@ -29,7 +29,7 @@
     if (!data.value) return;
 
     // Enviar mensaje a otros usuarios.
-    socket.emit(channel, data);
+    // socket.emit(channel, data);
 
     // Agregar el propio mensaje a la interfaz.
     addMsg(data);

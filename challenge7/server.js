@@ -17,6 +17,8 @@ server.listen(4000, function (err) {
 // Eventos de sockets
 //
 
+const channel = null;
+
 // Cuando un socket se conecta.
 io.on('connection', function (socket) {
 
@@ -29,13 +31,13 @@ io.on('connection', function (socket) {
 
   // Al recibir el evento 'canal' del socket, el cual representa
   // un nuevo mensaje del usuario.
-  socket.on(null, function (data) {
+  socket.on(channel, function (data) {
 
     const { username, value } = data;
 
     // Reenviamos el mensaje a todos los demás conectados emitiendoles
     // el evento 'canal' con los datos.
-    socket.broadcast.emit(null, data);
+    // socket.broadcast.emit(channel, data);
 
     console.log(`Nuevo mensaje: Usuario="${username}", Contenido="${value}".`);
   });
