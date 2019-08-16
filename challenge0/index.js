@@ -9,6 +9,9 @@ const json = {
   'baz': 'qux'
 };
 
+
 // TODO: Imprimir los atributos del objeto
+
+Object.keys(json).forEach(item => console.log(item));
 
 
